@@ -14,3 +14,8 @@ script para el manejo de variables, procesos y memoria en el contexto del desarr
 <p align = "Justify">
 Esta practica sera desarrollada con estructuras ramales, para el estudiante comience con la manipulacion correcta 
 de ramnas en el contexto de control de versiones y desarrollo colaborativo utilizando Git y Github
+
+### Historial de Cambios
+
+|No.|Descripcion|Ponteciador|Estatus|
+| 1.|Declaracion de variables|1|💻En Progreso|
