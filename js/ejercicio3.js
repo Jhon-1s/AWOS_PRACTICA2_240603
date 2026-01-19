@@ -53,15 +53,15 @@ function login(username, password) {
         console.log("Bienvenido usuario Admin!");
     } 
     else if (username === "admin" && password !== "12345") {
-        userValidation = true;
+        userValidation = false;
         console.log("Lo sentimos, la contraseña es incorrecta");
     } 
     else if (username !== "admin" && password === "12345") {
-        userValidation = true;
+        userValidation = false;
         console.log("Lo sentimos, el nombre de usuario no existe");
     } 
     else {
-        userValidation = true;
+        userValidation = false;
         console.log("Por favor verifique sus credenciales de acceso");
     }
 
@@ -109,7 +109,7 @@ isNewUser = function(){
 console.warn("5. Funcion annonima sin parametros");
 
 console.log("Test 1 - Fecha de ultimo acceso igual a la fecha actual");
-var lastLogin = fecha_actual();
+var lastLogin = new Date();
 var isNewUser = isNewUser();
 console.log(`La fecha del ultimo acceso es: ${lastLogin}`);
 console.log(`El usuario logueado es: ${isNewUser? 'Nuevo usuario':'Usuario antiguo'}`);
@@ -118,3 +118,49 @@ lastLogin = new Date('2025-12-31');
 console.log("Test 2 - Fecha de ultimo acceso es diferente a la fecha actual");
 console.log(`La fecha del ultimo acceso es: ${lastLogin}`);
 console.log(`El usuario logueado es: ${isNewUser? 'Nuevo usuario':'Usuario antiguo'}`);
+
+//6. Funciones Anonimas con Parametros (Version  Aroow o labmda)
+console.warn("6. Funcion annonima con parametros");
+
+const sumar =(a,b) => {
+    let resultado = a + b;
+    return resultado;
+}
+
+console.log(`El resultado de la suma de 15 + 83 es: ${sumar(15,83)}`);
+
+//7. Funcion CALLBACK (funcion que se pasa como parametro a otra funcion)
+//7. Funciones Callback (Regreso de Llamado)
+console.warn("7. Funciones Anónimas Callback (Respuesta)")
+const recoverPassword = function(email, callback)
+{
+
+    // Generamos el código a enviar al usuario.
+    const recoveryCode= Math.floor(1000000 + Math.random()*900000)
+
+    console.log(`
+=======================================================================
+Solicitud de recuperación recibida
+Correo del usuario sollicitante: ${email}
+Generando Código de Recuperación...
+Código de Seguridad Generado: ${recoveryCode}
+Enviando el correo al usuario...
+Correo Enviado a : ${email}, con el código de seguridad: ${recoveryCode}
+=======================================================================`);
+
+
+// definiendo la respues del sistema
+const response ={
+    status: "OK",
+    message: "Código de recuperación enviado satisfactoriamente."
+};
+
+callback(response);
+};
+
+// Invocación de una función callback
+recoverPassword("jon@gmail.com", 
+    function(systemResponse){
+        console.log("Respuesta del sistema: ");
+        console.log(systemResponse.message);
+    });

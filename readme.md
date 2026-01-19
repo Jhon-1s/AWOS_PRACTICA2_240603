@@ -24,3 +24,4 @@ de ramnas en el contexto de control de versiones y desarrollo colaborativo utili
 |---|---|---|---|
 | 1.|Declaracion de variables|3|✅ Finalizada|
 | 2.|Tipos de datos|7|✅ Finalizada|
+| 3.|Funciones|7|✅ Finalizada|
