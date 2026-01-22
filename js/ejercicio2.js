@@ -1,70 +1,78 @@
-//Tipos de datos en JavaScript
+// Tipos de datos en Java Script
 
-//Personalizacion de salidas a Consola
-//const bg="linear-gradient(45deg, rgba(52, 152, 219, 1)0%, rgba (26, 188, 156, 1) 50%)";
-//const style_console = `background: ${bg}; color: white; border-radius:6px; padding:4px; font-size:1.0rem;font-weight:bold`;
+// Personalizacióin de salidas a Consola
+//const bg= "linear-gradient(45deg, rgba(52, 152, 219, 1) 0%, rgba(26, 188, 156, 1) 50%)";
+//const style_console = `background: ${bg}; color:white; border-radius: 6px; padding:4px; font-size:1.0rem; font-weight:bold`
 
-console.log("%c2.-Ejercicio 02: Tipos de Datos", style_console);
+console.log("%cEjercicio 02: Tipos de Datos ",style_console);
 
-//1. Undifined - valor por defecto asignado a variables declaradas pero no inicializadas, no es igual a NULL.
+// 1. Undefined - valor por defecto asignado a variables declaradas pero no inicializadas, no es igual a NULL.
 console.warn("1.- Undifined (No Definido)");
 let usuarioLogeado;
 var rolUsuario;
-const ultimoAcceso = undefined;
+const ultimoAcceso = undefined; 
 
-/* En Java Script existe un metodo typeof() que nos devuelve el tipo de una varible
-preficamente declarada o su valor*/
+console.log("Valores actuales de las variables");
+console.log(`usuarioLogeado = ${usuarioLogeado}`);
+console.log(`rolUsuario = ${rolUsuario}`);
+console.log(`ultimoAcceso = ${ultimoAcceso}`);
 
-console.log("Valores actuales de las variables:");
-console.log('usuarioLogeado = ${typeof(usuarioLogeado)}');
-console.log('rolUsuario = ${typeof(rolUsuario)}');
-console.log('ultimoAcceso = ${typeof(ultimoAcceso)}');
+/* En java script existe el método typeof() que nos devuelve el tipo de dato de una variable preficamente declarada.*/
 
-//supongamos que un usuario denominado Jonathan se ha logeado exitosamente , el valor de la variable debera
-//actualizarse a su username
+
+console.log("Tipos de dato de las varibles declaradas:");
+console.log(`usuarioLogeado = ${typeof(usuarioLogeado)}`);
+console.log(`rolUsuario = ${typeof(rolUsuario)}`);
+console.log(`ultimoAcceso = ${typeof(ultimoAcceso)}`);
+
+// Supongamos que un usuario denominado MarcoRamirez99 se ha logeado exitosamente, el valor de la variable debera actualizarce a su username
+
 usuarioLogeado = "Jonathan I";
 
-//PERO NO SOLO CAMBIARA SU VALOR SINO TAMBIEN SU TIPO DE DATO
+// pero no solo cambiará su valor , también cambiará su tipo
 
-console.log('El valor de la varible usuarioLogeado ahora es: ${usuarioLogeado}y su tipo de dato es: ${typeof(usuarioLogeado)}');
+console.log(`El valor de la variable usuarioLogeado es: ${usuarioLogeado}  y su nuevo tipo de dato es: ${typeof(usuarioLogeado)}`);
 
-//2. BOOLEAN (TRUE/FALSE) - Verdadero o falso
-console.warn("2. BOOLEAN (TRUE/FALSE) - Verdadero o falso")
+
+// 2. BOOLEAN  (TRUE/FALSE) - Verdadero o Falso
+console.warn("2.-  BOOLEAN (TRUE/FALSE)")
 var hayUsuarioLogeado;
 
-/* Supongamos que nuestra app tendra un menu especifico para los usuarios
-registrados, en el podran visualizar sus mensajes o estados de sus publicaciones
-de renta o venta de propiedades, a diferencia de un usuario que entra de manera igcognita a visualizar
-las propiedades*/
+/* Supongamos que nuestra app tendrá un menu específico para los usuarios registrados , en el podrán visualizar sus mensajes o estado de sus publicaciones de renta o venta de propiedades, a diferencia de un usuario que entra de manera incognita a visualar las propiedades. */
+
+
 function validacionUsuarioLogeado(){
+    console.log(`El valor de la variable hayUsuarioLogeado es: ${hayUsuarioLogeado} , que es de tipo: ${typeof(hayUsuarioLogeado)}`);
 
-console.log('El valor de la variable hayUsuarioLogeado es: ${hayUsuarioLogeado}, que es de tipo: ${typeof(hay usuarioLogeado)}');
+    if(hayUsuarioLogeado === true)
+    {
+        console.log("Dado que se ha logeado un usuario la app mostrará el menú de usuario");
+    }
+    else if(!hayUsuarioLogeado)
+    {
+        console.log("Dado que no hay usuario logeado la app no mostrara el menú de usuario.");
+    }    
+    else {
+        console.log("No puedo procesar este tipo de dato, requiero de un booleano.");
+    }
+}
 
-if(hayUsuarioLogeado===true){
-   console.log("Dado que se ha logueado un usuario la app mostrara el menu de usuario");
-}
-else if(!hayUsuarioLogeado){
-console.log("Dado que no hay usuario logueado la app no mostrara el menu de usuario");
-}
-
-else{
-    console.log("No puedo procesar este tipo de dato, requerido de un boolean.")
-}
-}
-//test1 : usuario logeado = true
-hayUsuarioLogeado=true;
-console.log("Test_1")
-validacionUsuarioLogeado();
-//test2 : usuario logeado = false
-hayUsuarioLogeado=false;
-console.log("Test_2")
-validacionUsuarioLogeado();
-//test1 : usuario logeado = cualquier otra cosa
-hayUsuarioLogeado=52.5;
-console.log("Test_3")
+// test1  : usuario logeado = true
+hayUsuarioLogeado= true; 
+console.log("Test 1")
 validacionUsuarioLogeado();
 
-//3. NUMBER - Tipo de dato numerico, ya sea entero o decimal
+// test2 : usuario logeado = false 
+console.log("Test 2")
+hayUsuarioLogeado= false; 
+validacionUsuarioLogeado();
+
+// test3 : usuario logeado = a cualquier otra cosa
+console.log("Test 3")
+hayUsuarioLogeado= 52.5; 
+validacionUsuarioLogeado();
+
+// 3. NUMBER (Numéricos)
 console.warn("3.- NUMBER (NUMÉRICOS)")
 /* Es importante saber que Java Script a diferencia de otros lenguajes no diferencia los datos de tipo númerico, lo que para otros leguajes de programación lo que un ENTERO (INT), FLOTANTE (FLOAT), DECIMAL , DOBLE (DOUBLE), para el solo son números (NUMBER)*/
 
@@ -89,47 +97,51 @@ console.log(`Los tipos de datos de las variables declaradas para los datos de la
                     Altitud (GPS) : ${typeof(altGPS)}`);
 
 
-//4. STRING - Tipo de dato cualitativo, cadenas de texto
-console.warn("4. STRING - Tipo de dato cualitativo, cadenas de texto")
-/* Este tipo de dato es utilizado para almacenar informacion cualitativa, ya sea nombres,
-descripciones, direcciones, etc. Las cadenas de texto en JavaScript pueden ser definidas utilizando
-comillas simples (' '), comillas dobles (" ") o backticks (` `) para plantillas literales.*/
-var fullnameOwner = "Jonathan Isai Martinez Hernandez";
-let nameProperty = " Hermosa  Casa en la playa de Puerto Vallarta";
-let descriptionProperty = "Hermosa casa en la playa de Puerto Vallarta con vista al mar, cerca de parques y avenidas principales, con excelentes acabados y espacios amplios.";
-var statusProperty = 'Disponible';
-const typeproperty = "C";
-var addressProperty = 'Calle 5 de Mayo #123, Colonia Centro, C.P. 48300, Puerto Vallarta, Jalisco, México.';
+//4.- STRING (Cadena de Caractéres)
 
-//Manipulando Strings, los tipos de datos cualitativos tienen ciertos metodos para manipular su valor por mecionar algunos:
+var fullnameOwner = "Jonathan Isai"
+let nameProperty = "          Hermosa Casa en la Playa de Puerto Vallarta   ";
+let descriptionProperty = "CASA de 2 pisos, 4 HABITACIONES, 2 baños completos y estacionamiento para 2 automoviles a orilla del MAR.";
+var statusProperty = "Disponible";
+const typeProperty="C";
+var addressProperty;
 
+/* Los tipos de datos STRING son un palabras , valores cualitativos de las entidades de nuestra aplicación,  que no tienen un tamaño máximo  y que estan conformadas por carácteres alfabéticos , caracteres especiales como acentos o símbolos de algun idioma*/
 
-
-//Transforma a MAYUSCULAS 
-console.log('Nombre del propietario ${fullnameOwner.toUpperCase()}');
-
-//Transforma a minusculas
-console.log('Nombre del propietario ${descriptionProperty.toLowerCase()}');
-
-//Numero de caracteres
-console.log('El numero de caracteres en el nombre de la propiedad es: ${typeproperty.length}');
-
-//Subcadena
-console.log('Apellido del propietario: ${fullnameOwner.slice(8,fullnameOwner.length)}');
-
-//Eliminar espacios 
-console.log('Nombre de la propiedad: ${nameProperty.trim()}');
-
-//Remplazar caracteres
-console.log('Descripcion modificada: ${descriptionProperty.replace("Mar","Rio")}');
-
-//Remplazar todos los caracteres
-console.log('Descripcion modificada: ${descriptionProperty.replaceAll("A","4")}');
+console.warn("4. STRING (CADENA DE CARÁCTERES , PALABRAS");
+console.log(`El usuario: ${fullnameOwner},
+     esta vendiendo o rentando: ${nameProperty}
+     que consiste en: ${descriptionProperty}
+     actualmente esta en estado: ${statusProperty} y es del tipo: ${typeProperty}`);
 
 
-//5. BIGINT - Tipo de dato numerico para valores ENTEROS muy grandes
+    
+     console.log(`Las variables declaradas son del tipo:
+                fullnameOwner :  ${typeof(fullnameOwner)}
+                nameProperty :  ${typeof(nameProperty)}
+                descriptionProperty:  ${typeof(descriptionProperty)}
+                statusProperty :  ${typeof(statusProperty)}
+                typeProperty :  ${typeof(typeProperty)}`);
 
-console.warn("5.BIGINT - (Entero de Grandes precision)");
+// Manipulando Strings, los tipos de datos cualitativos tienen ciertos métodos para manipular su valor por mencionar algunos:
+
+// Transformar a MAYÚSCULAS
+console.log(`Nombre del Propietario ${fullnameOwner.toUpperCase()}`);
+// Transformar a minúsculas 
+console.log(`Descripción de la Propiedad: ${descriptionProperty.toLocaleLowerCase()}`);
+// Número de Caracteres 
+console.log(`Numero de letras en el tipo de Propiedad ${typeProperty.length}`);
+// Subcadena
+console.log(`Apellido del Propietario: ${fullnameOwner.slice(8, fullnameOwner.length)}`);
+// Elminiar espacios
+console.log(`Nombre de la Propiedad: ${nameProperty.trim()}`);
+// Remplazar caracteres
+console.log(`Descripción modificada: ${descriptionProperty.replace("MAR", "RÍO")}`);
+// Remplazar todos
+console.log(`Descripción modificada: ${descriptionProperty.toLocaleUpperCase().replaceAll("A", "4")}`);
+
+
+// 5. BIGINT (Entero de Grandes dimensions)
 
 /*Este tipo de dato permite almacenar  numeros exageradamente amplios que usualmente aplicaciones científicas avanzadas requieren , esto para no perder presición en los valores almacenados. */
 
@@ -245,4 +257,4 @@ console.log(`
     El usuario: ${usuarioLogeado}, tipo de dato: ${typeof(usuarioLogeado)}
     Fecha ultimo login: ${todayDate} tipo de dato: ${typeof(todayDate)}
     Es nuevo usuario: ${isNewUser} tipo de dato: ${typeof(isNewUser)}
-    Es usuario premium: ${isPremiumUser} tipo de dato: ${typeof(isPremiumUser)}`);     
+    Es usuario premium: ${isPremiumUser} tipo de dato: ${typeof(isPremiumUser)}`);
